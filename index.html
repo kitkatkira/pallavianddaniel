@@ -33,7 +33,7 @@ body::after {
 .container {
     max-width: 760px;
     margin: 0 auto;
-    padding: 170px 32px 90px 32px; /* loosened header */
+    padding: 110px 32px 90px 32px;
     text-align: center;
     position: relative;
 }
@@ -41,12 +41,12 @@ body::after {
 /* Sacred Glow */
 .sacred-glow {
     position: absolute;
-    top: 90px;
+    top: 60px;
     left: 50%;
     transform: translateX(-50%);
-    width: 420px;
-    height: 220px;
-    background: radial-gradient(circle, rgba(201,169,110,0.22) 0%, rgba(201,169,110,0.06) 45%, transparent 70%);
+    width: 360px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(201,169,110,0.15) 0%, rgba(201,169,110,0.05) 45%, transparent 70%);
     z-index: 0;
     pointer-events: none;
 }
@@ -58,35 +58,26 @@ body::after {
     -webkit-text-fill-color: transparent;
 }
 
-/* Animations */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@media(max-width: 640px){
-    body::after { margin: 0 18px; }
-    .menu-grid { grid-template-columns: 1fr; }
-    .step { grid-template-columns: 30px auto; }
-
-}
-
 /* Invocation */
 .invocation {
     font-family: 'Noto Serif Telugu', serif;
-    font-size: clamp(22px, 3vw, 28px);
-    letter-spacing: 4px;
-    margin-bottom: 22px;
-    animation: floatSlow 6s ease-in-out infinite;
+    font-size: clamp(20px, 3vw, 26px);
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+ opacity: 0;
+    animation: fadeInUp 1.4s ease forwards;
+    animation-delay: 0.8s;
 }
 
 /* Main Telugu Title */
 .telugu-title {
     font-family: 'Noto Serif Telugu', serif;
-    font-size: clamp(42px, 5vw, 54px);
-    letter-spacing: 7px;
-    margin-bottom: 10px;
-    animation: floatSlow 7s ease-in-out infinite;
+    font-size: clamp(38px, 5vw, 48px);
+    letter-spacing: 5px;
+    margin-bottom: 6px;
+ opacity: 0;
+    animation: fadeInUp 1.4s ease forwards;
+    animation-delay: 0.8s;
 }
 
 /* Subtitle */
@@ -208,6 +199,19 @@ body::after {
     margin-top: 6px;
 }
 
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width: 640px){
+    body::after { margin: 0 18px; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .step { grid-template-columns: 30px auto; }
+}
+
+/* Responsive */
 @media(max-width: 640px){
     body::after { margin: 0 18px; }
     .menu-grid { grid-template-columns: 1fr; }

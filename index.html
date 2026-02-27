@@ -1,75 +1,251 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pallavi & Daniel | Nischitartam</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
+
 body {
     margin: 0;
-    font-family: 'Georgia', serif;
-    background-color: #fdfaf4;
-    color: #333;
-    text-align: center;
-    padding: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #f3ede3;
+    color: #2f2f2f;
+    line-height: 2.1;
+    animation: fadeIn 1.8s ease forwards;
+    opacity: 0;
+    position: relative;
 }
+
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* Temple lattice */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10' y='10' width='80' height='80' fill='none' stroke='%23d6c3a1' stroke-width='0.6'/%3E%3Ccircle cx='50' cy='50' r='25' fill='none' stroke='%23d6c3a1' stroke-width='0.4'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Silk grain */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size: 4px 4px;
+    pointer-events: none;
+    z-index: 0;
+}
+
 .container {
-    max-width: 600px;
-    margin: auto;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 160px 32px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
 }
-h1 {
-    color: #A67C2E;
-    font-size: 32px;
-    margin-top: 40px;
+
+/* Title */
+.telugu-title {
+    font-family: 'Noto Serif Telugu', serif;
+    font-size: clamp(40px, 5vw, 52px);
+    letter-spacing: 6px;
+    background: linear-gradient(135deg, #8e6b3a, #c9a96e, #7a5a2c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
 }
-h2 {
-    color: #A67C2E;
-    font-weight: normal;
+
+.names {
+    font-size: clamp(28px, 4vw, 36px);
+    letter-spacing: 2px;
+    font-weight: 500;
 }
+
+.date {
+    margin-top: 16px;
+    font-size: 14px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #8a6a3c;
+}
+
+.parents {
+    margin-top: 18px;
+    font-size: 16px;
+    color: #6e5a38;
+}
+
+.ornament {
+    width: 100px;
+    height: 1px;
+    margin: 100px auto;
+    background: linear-gradient(to right, transparent, #9b7a45, transparent);
+}
+
+/* Sections */
+
 .section {
-    margin: 40px 0;
+    margin: 140px 0;
 }
-.timeline {
+
+.section h2 {
+    font-size: 14px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #8a6a3c;
+    margin-bottom: 36px;
+}
+
+.section p {
+    max-width: 660px;
+    margin: 0 auto 22px auto;
+    font-size: clamp(18px, 2vw, 20px);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 90px;
+    max-width: 600px;
+    margin: 0 auto;
     text-align: left;
-    display: inline-block;
-    margin-top: 20px;
 }
-.timeline p {
-    margin: 6px 0;
-}
+
 .footer {
-    margin-top: 40px;
+    margin-top: 180px;
     font-style: italic;
-    color: #A67C2E;
+    font-size: 15px;
+    color: #8a6a3c;
 }
+
+@media(max-width: 640px){
+    .menu-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
 </style>
 </head>
+
 <body>
+
 <div class="container">
-<h1>నిశ్చితార్థం</h1>
-<h2>Pallavi & Daniel</h2>
-<p>February 28, 2026</p>
+
+<div class="telugu-title">నిశ్చితార్థం</div>
+<div class="names">Pallavi & Daniel</div>
+<div class="date">February 28, 2026</div>
+<div class="parents">Ramkumar & Namita Sripathi and Gilbert & Susan Maturino</div>
+
+<div class="ornament"></div>
 
 <div class="section">
 <h2>Welcome</h2>
-<p>Welcome to our Nischitartam — a cherished South Indian engagement ceremony rooted in Telugu tradition, marking the formal confirmation of marriage and the union of two families.</p>
+<p>
+Welcome to our Nischitartam — a sacred engagement ceremony rooted in Telugu tradition, marking the formal confirmation of marriage and the union of two families.
+</p>
 </div>
 
+<div class="ornament"></div>
+
 <div class="section">
-<h2>Ceremony Timeline</h2>
-<div class="timeline">
-<p>5:00 PM — Welcome & Family Gathering</p>
-<p>5:30 PM — Lagna Patrika Reading</p>
-<p>6:00 PM — Thamboolam Exchange</p>
-<p>6:30 PM — Ring Ceremony</p>
-<p>7:00 PM — Blessings & Dinner Celebration</p>
+<h2>A Sacred Beginning</h2>
+<p>
+Nischitartam signifies the formal affirmation of marriage — a gathering of lineage, blessing, and shared future.
+</p>
+<p>
+Today is not only a promise between Pallavi and Daniel, but the joining of heritage and devotion.
+</p>
+</div>
+
+<div class="ornament"></div>
+
+<div class="section">
+<h2>What Is Nischitartam?</h2>
+<p>
+Nischitartam (also called Nischitartham or Nichayathartham) is a traditional South Indian engagement ceremony, especially common in Telugu families.
+</p>
+<p>
+The word comes from Sanskrit: “Nischita” = decided / confirmed, “Artham” = meaning / purpose.
+</p>
+<p>
+Together, it means “The formal confirmation of marriage.” It is the beautiful moment when two families officially agree to unite their children in marriage.
+</p>
+</div>
+
+<div class="ornament"></div>
+
+<div class="section">
+<h2>Ceremony</h2>
+<p><strong>Family Agreement</strong> — Both families formally announce and bless the match.</p>
+<p><strong>Lagna Patrika Reading</strong> — The formal announcement of the auspicious wedding date and sacred timing.</p>
+<p><strong>Exchange of Thamboolam</strong> — Betel leaves, turmeric, fruits, sweets, and gifts symbolizing prosperity and harmony.</p>
+<p><strong>Blessings from Elders</strong> — Prayers for Dharma, Artha, Kāma, and Moksha.</p>
+<p><strong>Ring Exchange</strong> — A modern expression of commitment and devotion.</p>
+<p>
+After Nischitartam, the couple is officially considered engaged. It marks the transition from individual to partnership — a beautiful ceremony where two families say yes to forever.
+</p>
+</div>
+
+<div class="ornament"></div>
+
+<div class="section">
+<h2>Timeline</h2>
+<p>11:00 AM – 12:30 PM</p>
+<p>Lunch to Follow at 1:00 PM</p>
+</div>
+
+<div class="ornament"></div>
+
+<div class="section">
+<h2>Lunch</h2>
+<div class="menu-grid">
+<p>Paneer Frankie Rolls</p>
+<p>Gongura Pulihara</p>
+<p>Bisi Bele Bhaat</p>
+<p>Jackfruit Phool Makhana Masala</p>
+<p>Raw Banana Pulusu</p>
+<p>Daddhojanam with Pomegranate</p>
+<p>Kaja Sweet</p>
 </div>
 </div>
 
 <div class="footer">
-Two families officially saying yes to forever.
+Two families officially saying yes to forever. ॐ शुभमस्तु (Om Shubhamastu) — May all be auspicious.
 </div>
+
 </div>
+
+<!-- Ambient Carnatic Instrumental -->
+<audio id="bg-music" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_59b0e9cbe4.mp3?filename=indian-classical-11024.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const audio = document.getElementById("bg-music");
+audio.volume = 0.18;
+document.addEventListener("DOMContentLoaded", function() {
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+        playPromise.catch(() => {
+            document.addEventListener("click", () => {
+                audio.play();
+            }, { once: true });
+        });
+    }
+});
+</script>
+
 </body>
 </html>

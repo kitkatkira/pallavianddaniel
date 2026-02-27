@@ -13,67 +13,90 @@
 body {
     margin: 0;
     font-family: 'Cormorant Garamond', serif;
-    background-color: #f3ede3;
+    background: linear-gradient(to bottom, #f8f4ec 0%, #f1e9db 100%);
     color: #2f2f2f;
     line-height: 2.1;
-    animation: fadeIn 1.8s ease forwards;
-    opacity: 0;
-    position: relative;
 }
 
-@keyframes fadeIn { to { opacity: 1; } }
-
-/* Temple lattice */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10' y='10' width='80' height='80' fill='none' stroke='%23d6c3a1' stroke-width='0.6'/%3E%3Ccircle cx='50' cy='50' r='25' fill='none' stroke='%23d6c3a1' stroke-width='0.4'/%3E%3C/svg%3E");
-    background-size: 180px 180px;
-    opacity: 0.07;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Silk grain */
+/* Subtle architectural vertical rhythm */
 body::after {
     content: "";
     position: fixed;
     inset: 0;
-    background-image: radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
-    background-size: 4px 4px;
+    border-left: 1px solid rgba(150,120,70,0.12);
+    border-right: 1px solid rgba(150,120,70,0.12);
+    margin: 0 50px;
     pointer-events: none;
-    z-index: 0;
 }
 
+/* Container */
 .container {
-    max-width: 780px;
+    max-width: 760px;
     margin: 0 auto;
     padding: 160px 32px;
     text-align: center;
     position: relative;
-    z-index: 1;
 }
 
-/* Title */
-.telugu-title {
-    font-family: 'Noto Serif Telugu', serif;
-    font-size: clamp(40px, 5vw, 52px);
-    letter-spacing: 6px;
-    background: linear-gradient(135deg, #8e6b3a, #c9a96e, #7a5a2c);
+/* Sacred Glow */
+.sacred-glow {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 420px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(201,169,110,0.18) 0%, rgba(201,169,110,0.05) 45%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Gold Gradient */
+.gold-text {
+    background: linear-gradient(135deg, #7c5b2b, #c9a96e, #8b6a3c);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
+}
+
+/* Invocation */
+.invocation {
+    font-family: 'Noto Serif Telugu', serif;
+    font-size: clamp(22px, 3vw, 28px);
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease forwards;
+    animation-delay: 0.3s;
+}
+
+/* Main Telugu Title */
+.telugu-title {
+    font-family: 'Noto Serif Telugu', serif;
+    font-size: clamp(42px, 5vw, 54px);
+    letter-spacing: 6px;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInUp 1.4s ease forwards;
+    animation-delay: 0.8s;
+}
+
+/* Subtitle */
+.subtitle {
+    margin-top: 12px;
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8a6a3c;
 }
 
 .names {
     font-size: clamp(28px, 4vw, 36px);
     letter-spacing: 2px;
-    font-weight: 500;
+    margin-top: 40px;
 }
 
 .date {
-    margin-top: 16px;
+    margin-top: 12px;
     font-size: 14px;
     letter-spacing: 5px;
     text-transform: uppercase;
@@ -87,16 +110,14 @@ body::after {
 }
 
 .ornament {
-    width: 100px;
+    width: 90px;
     height: 1px;
-    margin: 100px auto;
+    margin: 90px auto;
     background: linear-gradient(to right, transparent, #9b7a45, transparent);
 }
 
-/* Sections */
-
 .section {
-    margin: 140px 0;
+    margin: 130px 0;
 }
 
 .section h2 {
@@ -104,7 +125,7 @@ body::after {
     letter-spacing: 6px;
     text-transform: uppercase;
     color: #8a6a3c;
-    margin-bottom: 36px;
+    margin-bottom: 40px;
 }
 
 .section p {
@@ -113,27 +134,78 @@ body::after {
     font-size: clamp(18px, 2vw, 20px);
 }
 
-.menu-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 22px 90px;
-    max-width: 600px;
+/* Stepwise Ceremony */
+.steps {
+    max-width: 620px;
     margin: 0 auto;
     text-align: left;
 }
 
+.step {
+    display: grid;
+    grid-template-columns: 40px auto;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.step-number {
+    font-size: 18px;
+    color: #8a6a3c;
+    font-weight: 600;
+}
+
+.step-content strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 20px;
+}
+
+/* Symmetrical Lunch */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 120px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.menu-grid p {
+    margin: 0;
+    font-size: 19px;
+}
+
+/* Elegant Hyperlink */
+.photo-link {
+    color: #8a6a3c;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(138,106,60,0.4);
+    transition: all 0.3s ease;
+}
+
+.photo-link:hover {
+    border-bottom: 1px solid #8a6a3c;
+    letter-spacing: 0.5px;
+}
+
+/* Footer */
 .footer {
-    margin-top: 180px;
+    margin-top: 160px;
     font-style: italic;
     font-size: 15px;
     color: #8a6a3c;
 }
 
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 @media(max-width: 640px){
-    .menu-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+    body::after { margin: 0 18px; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .step { grid-template-columns: 30px auto; }
 }
 
 </style>
@@ -143,17 +215,24 @@ body::after {
 
 <div class="container">
 
-<div class="telugu-title">నిశ్చితార్థం</div>
+<div class="sacred-glow"></div>
+
+<div class="invocation gold-text">ఓం శ్రీ గణేశాయ నమః</div>
+<div class="subtitle">Om Shree Ganeshaya Namaha</div>
+<div class="telugu-title gold-text">నిశ్చితార్థం</div>
+<div class="subtitle">Welcome to the Nischitaartham</div>
+
 <div class="names">Pallavi & Daniel</div>
 <div class="date">February 28, 2026</div>
-<div class="parents">Ramkumar & Namita Sripathi and Gilbert & Susan Maturino</div>
+<div class="parents">Namita & Ramkumar Sripathi and Susan & Gilbert Maturino</div>
 
 <div class="ornament"></div>
+
 
 <div class="section">
 <h2>Welcome</h2>
 <p>
-Welcome to our Nischitartam — a sacred engagement ceremony rooted in Telugu tradition, marking the formal confirmation of marriage and the union of two families.
+Welcome to our Nischitaartham — a sacred engagement ceremony rooted in Telugu tradition, marking the formal confirmation of marriage and the union of two families.
 </p>
 </div>
 
@@ -162,25 +241,21 @@ Welcome to our Nischitartam — a sacred engagement ceremony rooted in Telugu tr
 <div class="section">
 <h2>A Sacred Beginning</h2>
 <p>
-Nischitartam signifies the formal affirmation of marriage — a gathering of lineage, blessing, and shared future.
+Nischitaartham signifies the formal affirmation of marriage — a gathering of lineage, blessing, and shared future.
 </p>
 <p>
-Today is not only a promise between Pallavi and Daniel, but the joining of heritage and devotion.
+Today is not only a promise between Pallavi and Daniel, but the joining of heritage, family, and devotion.
 </p>
 </div>
 
 <div class="ornament"></div>
 
 <div class="section">
-<h2>What Is Nischitartam?</h2>
+<h2>What Is Nischitaartham?</h2>
 <p>
-Nischitartam (also called Nischitartham or Nichayathartham) is a traditional South Indian engagement ceremony, especially common in Telugu families.
-</p>
-<p>
-The word comes from Sanskrit: “Nischita” = decided / confirmed, “Artham” = meaning / purpose.
-</p>
-<p>
-Together, it means “The formal confirmation of marriage.” It is the beautiful moment when two families officially agree to unite their children in marriage.
+Nischitaartham is a traditional South Indian engagement ceremony rooted in Telugu heritage.
+The word derives from Sanskrit — “Nischita” meaning decided, and “Artham” meaning purpose.
+Together, it signifies the formal confirmation of marriage — the moment two families unite in agreement and blessing.
 </p>
 </div>
 
@@ -188,19 +263,60 @@ Together, it means “The formal confirmation of marriage.” It is the beautifu
 
 <div class="section">
 <h2>Ceremony</h2>
-<p><strong>Family Agreement</strong> — Both families formally announce and bless the match.</p>
-<p><strong>Lagna Patrika Reading</strong> — The formal announcement of the auspicious wedding date and sacred timing.</p>
-<p><strong>Exchange of Thamboolam</strong> — Betel leaves, turmeric, fruits, sweets, and gifts symbolizing prosperity and harmony.</p>
-<p><strong>Blessings from Elders</strong> — Prayers for Dharma, Artha, Kāma, and Moksha.</p>
-<p><strong>Ring Exchange</strong> — A modern expression of commitment and devotion.</p>
-<p>
-After Nischitartam, the couple is officially considered engaged. It marks the transition from individual to partnership — a beautiful ceremony where two families say yes to forever.
+
+<div class="steps">
+
+<div class="step">
+<div class="step-number">01</div>
+<div class="step-content">
+<strong>Vinayaka Pooja</strong>
+Envoking Lord Vinayaka (Ganesha), the god of removing obstacles, to bless the initiation of their new life together.
+</div>
+</div>
+
+<div class="step">
+<div class="step-number">02</div>
+<div class="step-content">
+<strong>Lagna Patrika Reading</strong>
+Both families formally announce and bless the match — a union of households, not just individuals. The sacred announcement of the auspicious wedding date and muhurtham.
+</div>
+</div>
+
+<div class="step">
+<div class="step-number">03</div>
+<div class="step-content">
+<strong>Exchange of Tambulam</strong>
+Symbolic offerings representing prosperity, harmony, and abundance.
+</div>
+</div>
+
+<div class="step">
+<div class="step-number">04</div>
+<div class="step-content">
+<strong>Blessings from Elders</strong>
+Prayers for Dharma (purpose), Artha (prosperity), Kāma (love), and Moksha (fulfillment).
+</div>
+</div>
+
+<div class="step">
+<div class="step-number">05</div>
+<div class="step-content">
+<strong>Ring Exchange</strong>
+A modern expression of commitment and devotion.
+</div>
+</div>
+
+</div>
+
+<p style="margin-top:60px;">
+After Nischitaartham, the couple is officially considered engaged — marking the transition from individual to partnership.
 </p>
+
 </div>
 
 <div class="ornament"></div>
 
-<div class="section">
+<div class="section timeline">
 <h2>Timeline</h2>
 <p>11:00 AM – 12:30 PM</p>
 <p>Lunch to Follow at 1:00 PM</p>
@@ -221,31 +337,27 @@ After Nischitartam, the couple is officially considered engaged. It marks the tr
 </div>
 </div>
 
+<div class="ornament"></div>
+
+<div class="section">
+<h2>Photos</h2>
+<p>
+Please share any pictures you take via 
+<a href="https://photos.app.goo.gl/Wc83p7u6rLXxS76D7" 
+class="photo-link" 
+target="_blank">
+Google Photos Album
+</a>
+</p>
+</div>
+
+
 <div class="footer">
-Two families officially saying yes to forever. ॐ शुभमस्तु (Om Shubhamastu) — May all be auspicious.
+Two families officially saying yes to forever. 
+<p>ॐ शुभमस्तु (Om Shubhamastu) — May all be auspicious.</p>
 </div>
 
 </div>
-
-<!-- Ambient Carnatic Instrumental -->
-<audio id="bg-music" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_59b0e9cbe4.mp3?filename=indian-classical-11024.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-const audio = document.getElementById("bg-music");
-audio.volume = 0.18;
-document.addEventListener("DOMContentLoaded", function() {
-    const playPromise = audio.play();
-    if (playPromise !== undefined) {
-        playPromise.catch(() => {
-            document.addEventListener("click", () => {
-                audio.play();
-            }, { once: true });
-        });
-    }
-});
-</script>
 
 </body>
 </html>
